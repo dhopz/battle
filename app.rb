@@ -7,7 +7,7 @@ class Battle < Sinatra::Base
   end
 
   enable :sessions
-  
+
 #   get '/' do
 #     'Testing infrastructure working!'
 #   end
@@ -26,6 +26,12 @@ class Battle < Sinatra::Base
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     erb :play
+  end
+
+  get '/attack' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb :attack
   end
 
   # start the server if ruby file executed directly
